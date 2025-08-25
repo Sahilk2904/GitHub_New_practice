@@ -6,14 +6,22 @@ on:
       - 'main'
       - 'feature/**'
       - 'hotfix'
+
 jobs:
   terraforminit:
-  name: terraformInit
-  runs-on: sahil-runner
-  steps:
-   - name: Terraform init and plan
-      uses: comu2e/tfnotify-composite-action@1.0.4
-      with:          
-        tf_action: "init_and_plan"
-        working_dir: "./terraform" 
-        terraform_version: "1.5.0"
+    name: terraformInit
+    runs-on: sahil-runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.5.0
+
+      - name: Terraform init and plan
+        uses: comu2e/tfnotify-composite-action@1.0.4
+        with:
+          tf_action: "init_and_plan"
+          working_dir: "./terraform"
