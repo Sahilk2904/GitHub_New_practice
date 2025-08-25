@@ -8,19 +8,6 @@ on:
       - 'hotfix'
 jobs:
   terraforminit:
-    name: terraformInit
-    runs-on: sahil-runner
-    steps:
-      name: gitflow
-
-on: 
-  push:
-    branches:
-      - 'main'
-      - 'feature/**'
-      - 'hotfix'
-jobs:
-  terraforminit:
   name: terraformInit
   runs-on: sahil-runner
   steps:
