@@ -21,4 +21,4 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./terraform
+        working-directory: C:\Users\Public\Ness_data\Cloud\test_new\GitHub_practice\GitHub_New_practice
