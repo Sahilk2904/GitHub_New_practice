@@ -22,4 +22,4 @@ jobs:
       - name: Terraform Init
         run: terraform init
         working-directory: ./terraform
-        shell: pwsh
+        shell: powershell
