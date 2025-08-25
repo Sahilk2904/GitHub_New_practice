@@ -1,10 +1,11 @@
 name: gitflow
-  on: 
+
+on: 
   push:
-  branches:
-    - 'main'
-    - 'feature/**'
-    -  'hotfix'
+    branches:
+      - 'main'
+      - 'feature/**'
+      - 'hotfix'
   jobs:
     terraforminit
     name: terraformInit
