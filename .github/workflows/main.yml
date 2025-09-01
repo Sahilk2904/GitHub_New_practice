@@ -11,6 +11,10 @@ jobs:
     name: terraform INIT
     runs-on: sahil-runner
     steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
       - name: Install Terraform
         uses: little-core-labs/install-terraform@v2.0.0
         with:
@@ -20,7 +24,7 @@ jobs:
         uses: Azure/cli@v2.1.0
         with:
           # Specify the script here
-          inlineScript: azcli 
+          inlineScript: az --version
           
       - name: Azure Login
         uses: Azure/login@v2.3.0
