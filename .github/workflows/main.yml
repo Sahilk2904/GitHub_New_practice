@@ -14,17 +14,6 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v3
-        
-      - name: Install Terraform
-        uses: little-core-labs/install-terraform@v2.0.0
-        with:
-          version: 1.13.0
-          
-      - name: Azure CLI Action
-        uses: Azure/cli@v2.1.0
-        with:
-          # Specify the script here
-          inlineScript: az --version
           
       - name: Azure Login
         uses: Azure/login@v2.3.0
