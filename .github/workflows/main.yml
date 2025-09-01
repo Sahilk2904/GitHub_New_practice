@@ -1,24 +1,29 @@
-name: gitflow
+name: GitActionPipeline
 
-on: 
-  push:
-    branches:
-      - 'main'
-      - 'feature/**'
-      - 'hotfix'
+on: workflow_dispatch
+
 jobs:
-  terraforminit:
-    name: Terraform Init and Plan
+  terraform_jobs:
+    name: terraform INIT
     runs-on: sahil-runner
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+      - name: Install Terraform
+        uses: little-core-labs/install-terraform@v2.0.0
         with:
-          terraform_version: 1.5.0
+          version: 1.13.0
 
-      - name: Terraform Init
-        run: terraform init
-        working-directory: C:\Users\Public\Ness_data\Cloud\test_new\GitHub_practice\GitHub_New_practice
+      - name: Azure Login
+        uses: Azure/login@v2.3.0
+        with:
+          client-id:  edbc936d-9206-4e31-b37c-37178a5c8036
+          tenant-id:  90eaef6b-3882-4c51-8467-1155649bc19d
+          subscription-id:  fbac4321-0f41-46f0-baea-f23a62385eb5
+
+
+          
+
+          
+      
+          
+      
+
